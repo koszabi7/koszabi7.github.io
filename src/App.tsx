@@ -5,6 +5,26 @@ import { Github, Linkedin, Mail, FileText, ExternalLink, Brain, Layout } from 'l
 const App: React.FC = () => {
   return (
     <div className="min-h-screen w-full bg-slate-950 py-12 px-4 font-sans text-slate-200">
+
+      {/* HÁTTÉR RÉTEGEK */}
+      {/* 1. Generatív Halftone Textúra (A te p5.js képed) */}
+      <div 
+        className="fixed inset-0 z-0 pointer-events-none opacity-[0.07]" 
+        style={{ 
+          backgroundImage: `url('/smooth_tall_background.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          backgroundAttachment: 'fixed', // Ettől marad egy helyben görgetésnél
+          backgroundRepeat: 'no-repeat'
+        }}
+      ></div>
+
+      {/* 2. Finom színfoltok a mélységért (opcionális, de ajánlott) */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-5%] left-[-5%] w-[50%] h-[50%] bg-blue-900/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[5%] right-[-5%] w-[40%] h-[40%] bg-indigo-900/10 rounded-full blur-[120px]"></div>
+      </div>
+
       <div className="max-w-5xl mx-auto flex flex-col items-center space-y-16">
         
         {/* HERO SECTION */}

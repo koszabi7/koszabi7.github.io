@@ -1,42 +1,66 @@
 import React from 'react';
 import { profileData } from './data';
 import { Github, Linkedin, Mail, FileText, ExternalLink, Brain, Layout } from 'lucide-react';
+import { useState } from 'react';
 
 const App: React.FC = () => {
+  const [isImageOpen, setIsImageOpen] = useState(false); // Állapot a nagyításhoz
+
   return (
     <div className="min-h-screen w-full bg-slate-950 py-12 px-4 font-sans text-slate-200">
 
+      {/* MODÁLIS ABLAK - Akkor jelenik meg, ha isImageOpen === true */}
+      {isImageOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md cursor-zoom-out p-4"
+          onClick={() => setIsImageOpen(false)}
+        >
+          <img 
+            src={profileData.profilePicture} 
+            alt={profileData.name} 
+            className="max-w-[90%] max-h-[90vh] rounded-2xl shadow-2xl border-2 border-slate-800 transition-transform duration-300 scale-100"
+            onClick={(e) => e.stopPropagation()} // Megakadályozza a bezárást, ha magára a képre kattintasz
+          />
+          <button className="absolute top-5 right-5 text-white text-4xl hover:text-blue-400 transition-colors">&times;</button>
+        </div>
+      )}
+
       {/* HÁTTÉR RÉTEGEK */}
-      {/* 1. Generatív Halftone Textúra (A te p5.js képed) */}
       <div 
         className="fixed inset-0 z-0 pointer-events-none opacity-[0.07]" 
         style={{ 
           backgroundImage: `url('/smooth_tall_background.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
-          backgroundAttachment: 'fixed', // Ettől marad egy helyben görgetésnél
+          backgroundAttachment: 'fixed',
           backgroundRepeat: 'no-repeat'
         }}
       ></div>
 
-      {/* 2. Finom színfoltok a mélységért (opcionális, de ajánlott) */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-5%] left-[-5%] w-[50%] h-[50%] bg-blue-900/10 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[5%] right-[-5%] w-[40%] h-[40%] bg-indigo-900/10 rounded-full blur-[120px]"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto flex flex-col items-center space-y-16">
+      {/* TARTALOM */}
+      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center space-y-16 py-12 px-4">
         
         {/* HERO SECTION */}
         <header className="w-full flex flex-col md:flex-row items-center gap-10 bg-slate-900/40 p-10 rounded-3xl shadow-2xl border border-slate-800 backdrop-blur-md">
-          <div className="relative shrink-0">
-            <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur opacity-30 animate-pulse"></div>
+          
+          {/* PROFILKÉP - Itt adtuk hozzá az onClick eseményt */}
+          <div 
+            className="relative shrink-0 cursor-zoom-in group" 
+            onClick={() => setIsImageOpen(true)}
+          >
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur opacity-30 animate-pulse group-hover:opacity-50 transition-opacity"></div>
             <img 
               src={profileData.profilePicture} 
               alt={profileData.name} 
-              className="relative w-44 h-44 rounded-full object-cover border-4 border-slate-900 shadow-2xl"
+              className="relative w-44 h-44 rounded-full object-cover border-4 border-slate-900 shadow-2xl group-hover:scale-105 transition-transform duration-300"
             />
           </div>
+
           <div className="text-center md:text-left space-y-6">
             <div>
               <h1 className="text-5xl font-black tracking-tight text-white">{profileData.name}</h1>

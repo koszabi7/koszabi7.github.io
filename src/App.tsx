@@ -272,24 +272,69 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* PROJECTS */}
+        {/* PROJECTS SECTION */}
         <section className="w-full space-y-8">
           <div className="flex flex-col items-center md:items-start">
             <h2 className="text-3xl font-bold text-white mb-2">Featured Projects</h2>
-            <div className="w-20 h-1.5 bg-blue-600 rounded-full"></div>
+            <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"></div>
           </div>
           
-          <div className="grid gap-8">
+          <div className="grid gap-10">
             {profileData.projects.map((proj) => (
-              <div key={proj.name} className="group bg-slate-900/50 p-8 rounded-3xl border border-slate-800 hover:border-blue-500/30 transition-all shadow-xl">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">{proj.name}</h3>
-                    <p className="text-slate-400 text-lg max-w-2xl">{proj.desc}</p>
+              <div 
+                key={proj.name} 
+                className="group bg-slate-900/40 p-8 rounded-3xl border border-slate-800 transition-all duration-300 ease-out 
+                          hover:scale-[1.03] hover:bg-slate-800/60 hover:border-blue-500/50 hover:shadow-[0_20px_50px_rgba(37,99,235,0.15)] shadow-xl"
+              >
+                <div className="flex flex-col lg:flex-row justify-between gap-8">
+                  <div className="space-y-4 flex-1">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                      {proj.name}
+                    </h3>
+                    <p className="text-slate-400 text-lg leading-relaxed group-hover:text-slate-200 transition-colors">
+                      {proj.desc}
+                    </p>
+                    
+                    {/* Speciális tartalom a Gym Card-hoz */}
+                    {proj.name.includes("Gym") && (
+                      <div className="flex flex-wrap items-center gap-6 mt-4 p-4 bg-slate-950/50 rounded-2xl border border-slate-800">
+                        <div className="bg-white p-2 rounded-lg shrink-0">
+                          {/* Itt egy QR kód illusztráció vagy a tényleges QR kép */}
+                          <img 
+                            src="/gym-qr.png" 
+                            alt="Gym Card QR Code" 
+                            className="w-24 h-24 grayscale hover:grayscale-0 transition-all cursor-crosshair"
+                            title="Scan to try the app"
+                          />
+                        </div>
+                        <div className="text-sm">
+                          <p className="text-blue-400 font-bold uppercase tracking-wider mb-1">Usage Guide</p>
+                          <p className="text-slate-300">Name: <span className="text-white font-mono bg-slate-800 px-1 rounded">John Doe</span></p>
+                          <p className="text-slate-300">ID: <span className="text-white font-mono bg-slate-800 px-1 rounded">12345</span></p>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="pt-4">
+                      <a 
+                        href={proj.link} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-blue-600 rounded-xl text-white font-bold border border-slate-700 hover:border-blue-400 transition-all active:scale-95 shadow-lg"
+                      >
+                        View Project <ExternalLink size={18} />
+                      </a>
+                    </div>
                   </div>
-                  <a href={proj.link} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl text-blue-400 font-bold border border-slate-700 transition-all">
-                    View Project <ExternalLink size={18} />
-                  </a>
+                  
+                  {/* Opcionális: Tech Tags a projektekhez */}
+                  <div className="flex flex-wrap lg:flex-col gap-2 shrink-0 lg:w-32">
+                    {(proj.name.includes("Ship") ? ["PyTorch", "OpenCV", "Kaggle"] : ["React", "API", "ImageGen"]).map(tag => (
+                      <span key={tag} className="px-3 py-1 bg-slate-950 text-slate-500 text-[10px] font-bold uppercase rounded-md border border-slate-800 text-center">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

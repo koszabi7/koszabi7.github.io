@@ -38,11 +38,16 @@ export const profileData: ProfileData = {
   ],
 
   projects: [
-    {
-      name: "Personal Portfolio",
-      desc: "A high-performance portfolio site built with React, TypeScript, and Tailwind CSS, featuring a clean dark-themed UI.",
-      link: "https://github.com/koszabi7/"
-    }
+  {
+    name: "Ship Detection (Kaggle)",
+    desc: "A deep learning solution for the Airbus Ship Detection Challenge. Built with computer vision techniques to locate ships in satellite imagery, handling complex backgrounds and varying scales.",
+    link: "https://github.com/99ProblemsButABatchAint1/Ship_Detection"
+  },
+  {
+    name: "Gym Card App",
+    desc: "An annual gym attendance summary application. Guests scan a QR code to generate a custom PNG report featuring their yearly performance statistics and the gym's branding.",
+    link: "https://api.proudly.hu"
+  }
   ],
 
   social: {

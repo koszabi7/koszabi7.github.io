@@ -1,6 +1,6 @@
 import React from 'react';
 import { profileData } from './data';
-import { Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, ExternalLink, Brain, Layout } from 'lucide-react';
 
 const App: React.FC = () => {
   return (
@@ -42,6 +42,166 @@ const App: React.FC = () => {
             </div>
           </div>
         </header>
+
+        {/* PROFESSIONAL EXPERIENCE SECTION */}
+        <section className="w-full space-y-8">
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-3xl font-bold text-white mb-2">Professional Experience</h2>
+            <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"></div>
+          </div>
+
+          <div className="space-y-10"> {/* Megnövelt távolság a kártyák között a méretezés miatt */}
+            
+            {/* Nokia - Innovation & Automation */}
+            <div className="relative pl-8 border-l-2 border-blue-600/30 pb-2">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.8)]"></div>
+              
+              <div className="bg-slate-900/40 p-8 rounded-3xl border border-slate-800 backdrop-blur-md transition-all duration-300 ease-out 
+                              hover:scale-[1.05] hover:bg-slate-800/60 hover:border-blue-400 hover:shadow-[0_20px_50px_rgba(37,99,235,0.2)] group cursor-default">
+                
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors">Nokia</h3>
+                    <p className="text-lg text-blue-400 font-semibold italic">Innovation & Automation Trainee (Full-time)</p>
+                  </div>
+                  <span className="px-4 py-1.5 bg-blue-600/20 text-blue-400 text-sm font-bold rounded-full border border-blue-600/30 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                    2025-11 – Present
+                  </span>
+                </div>
+                
+                <div className="space-y-4">
+                  <p className="text-slate-300 leading-relaxed group-hover:text-slate-100 transition-colors">
+                    Driving organizational growth through cutting-edge technology and creative problem-solving.
+                  </p>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {[
+                      "Full-stack Innovation Prototyping",
+                      "AI Development & Integration",
+                      "Strategic Thinking & Brainstorming",
+                      "Organizational Development"
+                    ].map((task) => (
+                      <li key={task} className="flex items-center gap-2 text-slate-400 text-sm italic tracking-tight group-hover:text-slate-200 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_5px_rgba(59,130,246,0.5)]"></div> 
+                        {task}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {["AI", "Full Stack", "Innovation Strategy", "Automation"].map(tag => (
+                      <span key={tag} className="px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase rounded-md border border-blue-500/20 group-hover:border-blue-400/50 transition-all">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Idomsoft - System Engineering */}
+            <div className="relative pl-8 border-l-2 border-slate-800">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700"></div>
+              
+              <div className="bg-slate-900/40 p-8 rounded-3xl border border-slate-800 transition-all duration-300 ease-out 
+                              hover:scale-[1.05] hover:bg-slate-800/60 hover:border-slate-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] group cursor-default">
+                
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-300 group-hover:text-white transition-colors">Idomsoft</h3>
+                    <p className="text-lg text-slate-400 font-semibold italic">System Engineer Intern (Full-time)</p>
+                  </div>
+                  <span className="px-4 py-1.5 bg-slate-800 text-slate-500 text-sm font-bold rounded-full border border-slate-700 group-hover:border-slate-500 group-hover:text-slate-300 transition-all">
+                    2024-03 – 2025-11
+                  </span>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="text-slate-400 leading-relaxed group-hover:text-slate-200 transition-colors">
+                    Managed mission-critical infrastructure and ensured high availability through proactive maintenance.
+                  </p>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {[
+                      "Linux Systems Maintenance",
+                      "Monitoring & Performance Analysis",
+                      "Docker Environment Management",
+                      "OS Updates & Reporting",
+                      "Technical Training & Education"
+                    ].map((task) => (
+                      <li key={task} className="flex items-center gap-2 text-slate-500 text-sm italic tracking-tight group-hover:text-slate-300 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-slate-600"></div> 
+                        {task}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {["Linux", "Docker", "Monitoring", "System Administration"].map(tag => (
+                      <span key={tag} className="px-3 py-1 bg-slate-800 text-slate-500 text-[10px] font-bold uppercase rounded-md border border-slate-700 group-hover:border-slate-500 transition-all">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* HIGHER EDUCATION SECTION */}
+        <section className="w-full space-y-8">
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-3xl font-bold text-white mb-2">Higher Education</h2>
+            <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-full"></div>
+          </div>
+
+          <div className="space-y-10">
+            {/* MSc Tanulmányok (Folyamatban) */}
+            <div className="relative pl-8 border-l-2 border-blue-600/30 pb-2">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.8)]"></div>
+              
+              <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800 backdrop-blur-sm transition-all duration-300 ease-out 
+                              hover:scale-[1.05] hover:bg-slate-800/60 hover:border-blue-400 hover:shadow-[0_20px_50px_rgba(37,99,235,0.15)] group cursor-default">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                  <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">Budapest University of Technology and Economics (BME)</h3>
+                  <span className="px-3 py-1 bg-blue-600/20 text-blue-400 text-sm font-bold rounded-full border border-blue-600/30 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                    2026 – Present
+                  </span>
+                </div>
+                <p className="text-lg text-slate-200 font-medium group-hover:text-white transition-colors">Computer Science Engineering, MSc</p>
+              </div>
+            </div>
+
+            {/* BSc Tanulmányok */}
+            <div className="relative pl-8 border-l-2 border-slate-800">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700"></div>
+              
+              <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800 transition-all duration-300 ease-out 
+                              hover:scale-[1.05] hover:bg-slate-800/60 hover:border-slate-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] group cursor-default">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                  <h3 className="text-xl font-bold text-white group-hover:text-slate-100 transition-colors">Budapest University of Technology and Economics (BME)</h3>
+                  <span className="px-3 py-1 bg-slate-800 text-slate-400 text-sm font-bold rounded-full border border-slate-700 group-hover:border-slate-400 group-hover:text-slate-200 transition-all">
+                    2022 – 2026
+                  </span>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-lg text-slate-200 font-medium group-hover:text-white transition-colors">Computer Science Engineering, BSc</p>
+                    <p className="text-blue-400 font-semibold mt-1 group-hover:text-blue-300 transition-colors">Specialization: Machine Learning and Data Science</p>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-slate-800/50 flex flex-col md:flex-row items-start md:items-center gap-4">
+                    <p className="text-slate-400 text-sm italic group-hover:text-slate-300 transition-colors">Thesis Topic: Integrating AI Agents on a Workflow Automation Platform</p>
+                    <a 
+                      href="/szakdolgozat.pdf" 
+                      download 
+                      className="flex items-center gap-2 px-5 py-2 bg-slate-800 hover:bg-blue-600 rounded-xl text-white text-sm font-bold border border-slate-700 hover:border-blue-400 transition-all active:scale-95 shadow-lg"
+                    >
+                      <FileText size={16} /> Download Thesis (PDF)
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* SKILLS GRID */}
         <section className="w-full space-y-8">
@@ -92,8 +252,56 @@ const App: React.FC = () => {
           </div>
         </section>
 
+        {/* ACHIEVEMENTS SECTION */}
+        <section className="w-full space-y-8">
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-3xl font-bold text-white mb-2">Achievements</h2>
+            <div className="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* TDK Achievement */}
+            <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-blue-500/30 transition-all group">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-blue-600/20 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
+                    <Brain size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Scientific Students' Associations (TDK)</h3>
+                </div>
+                <p className="text-blue-400 font-semibold mb-2">2nd Place</p>
+                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                  Awarded 2nd place for my research and paper presented in 2025 November.
+                </p>
+              </div>
+              <a href="/TDK.pdf" download className="flex items-center justify-center gap-2 px-5 py-3 bg-slate-800 hover:bg-slate-700 rounded-2xl text-white font-bold border border-slate-700 transition-all active:scale-95">
+                <FileText size={18} /> Download Paper (PDF)
+              </a>
+            </div>
+
+            {/* Udemy Certificate */}
+            <div className="bg-slate-900/40 p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-blue-500/30 transition-all group">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-orange-600/20 rounded-lg text-orange-400 group-hover:scale-110 transition-transform">
+                    <Layout size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Udemy Certificate</h3>
+                </div>
+                <h4 className="text-slate-200 font-semibold mb-2">AI automation</h4>
+                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                  Completed an intensive professional course on Udemy, mastering AI automation with n8n workflows.
+                </p>
+              </div>
+              <a href="/udemy_certificate.pdf" download className="flex items-center justify-center gap-2 px-5 py-3 bg-slate-800 hover:bg-slate-700 rounded-2xl text-white font-bold border border-slate-700 transition-all active:scale-95">
+                <ExternalLink size={18} /> Download Certificate
+              </a>
+            </div>
+          </div>
+        </section>
+
         <footer className="w-full text-center py-10 text-slate-600 text-sm border-t border-slate-900">
-          Built with React, TypeScript & Tailwind CSS • 2024
+          Built with React, TypeScript & Tailwind CSS • 2025
         </footer>
       </div>
     </div>

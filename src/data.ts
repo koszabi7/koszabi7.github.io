@@ -9,11 +9,11 @@ export const profileData: ProfileData = {
   skillGroups: [
     {
       title: "AI & Machine Learning",
-      skills: ["Comprehensive ML Theory (BME Specialization + BME VITMAV45 - Grade 5)", "PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Hugging Face", "Pandas & NumPy", "OpenCV", "Vector Databases", "Transfer Learning", "Feature Engineering"]
+      skills: ["Comprehensive ML Theory (BME Specialization + BME VITMAV45 - Grade 5)", "Pandas & NumPy", "Scikit-learn", "PyTorch", "TensorFlow", "Keras", "Hugging Face Transformers", "OpenCV", "Vector Databases", "Transfer Learning", "Data Augmentation",  "Data Cleaning",  "Feature Engineering", "..."]
     },
     {
       title: "Frontend Development",
-      skills: ["React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS", "SASS/SCSS", "Responsive Design", "Vite", "REST API"]
+      skills: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS", "SASS/SCSS", "Responsive Design", "Vite"," Chrome DevTools", "REST API", "Axios"]
     },
     {
       title: "Backend & Database",
@@ -25,11 +25,15 @@ export const profileData: ProfileData = {
     },
     {
       title: "Tools & DevOps",
-      skills: ["Git", "Docker", "GitHub Actions", "Google Cloud Platform", "Linux/Bash", "Ansible", "Grafana", "Git Flow"]
+      skills: ["Git", "Docker", "GitHub", "GitLab", "Google Cloud Platform", "Linux/Bash", "Ansible", "Grafana", "Git Flow","VS Code", "JetBrains IDEs", "Nagios"]
     },
     {
-      title: "Soft Skills & Design",
-      skills: ["Agile/Scrum", "Problem Solving", "Analytical Thinking", "Figma", "UI/UX Prototyping"]
+      title: "Soft Skills",
+      skills: ["Effective Communication", "Teamwork", "Active Listening", "Remote Work Proficiency", "Analytical Thinking", "Problem Solving", "Growth Mindset", "Time Management", "Agile / Scrum Methodology", "Adaptability", "Self-Management", "Emotional Intelligence"]
+    },
+    {
+      title: "Design",
+      skills: ["Figma", "Canva", "Grid Systems & Layout", "User Flows", "Prototyping", "UML"]
     }
   ],
 
